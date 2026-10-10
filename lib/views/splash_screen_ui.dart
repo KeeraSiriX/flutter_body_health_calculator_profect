@@ -13,6 +13,8 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
   void initState() {
     // หน่วงหน้าจอ 3 วินาที แล้วเปลี่ยน HomeUI แบบย้อนกลับไม่ได้
     Future.delayed(Duration(seconds: 3), () {
+      if (!mounted) return;
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
